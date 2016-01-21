@@ -77,8 +77,9 @@
 				}
 
 				for (i = 0; i < json.length; i++) {
-					if (!json[i]['category']) {
-						html += '<li data-value="' + json[i]['value'] + '"><a href="#">' + json[i]['label'] + '</a></li>';
+					if (!json[i]['category']) {	
+						var content = json[i]['label'].replace(new RegExp(this.element.value, "gi"), '<strong>$&</strong>');	
+						html += '<li data-value="' + json[i]['value'] + '"><a href="#">' + content + '</a></li>';
 					}
 				}
  
